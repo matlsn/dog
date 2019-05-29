@@ -28,7 +28,12 @@
       superagent
         .get('https://commits.mat.dog/')
         .end((err, res) => {
-          console.log(res.text)
+          if (err) return
+          if (!res || !res.text || res.text.length < 10) return
+          let prep = res.text
+          prep = prep.slice(prep.indexOf('<g transform="translate(420'))
+          prep = '<svg width="722" height="112" class="js-calendar-graph-svg"><g transform="translate(10, 20)">' + prep
+          document.getElementById('commits').innerHTML = prep
         })
     </script>
   </head>

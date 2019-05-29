@@ -32,8 +32,11 @@
           if (!res || !res.text || res.text.length < 10) return
           let prep = res.text
           prep = prep.slice(prep.indexOf('<g transform="translate(420'))
-          prep = '<svg width="722" height="112" class="js-calendar-graph-svg"><g transform="translate(10, 20)">' + prep
-          document.getElementById('commits').innerHTML = prep
+          prep = '<svg class="js-calendar-graph-svg"><g>' + prep
+          $(prep).find('> g > g').each(function (i) {
+            $(this).attr('transform', `translate(${14*i}, 0)`)
+          })
+          $('#commits').html(prep)
         })
     </script>
   </head>

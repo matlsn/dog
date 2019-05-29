@@ -26,6 +26,25 @@
       svg text {
         display: none;
       }
+      @media only screen 
+      and (min-device-width: 320px) 
+      and (max-device-width: 480px)
+      and (-webkit-min-device-pixel-ratio: 2)
+      and (orientation: portrait) {
+        .info {
+          font-size: 29px;
+        }
+        div#commits svg {
+          transform: scale(1.5);
+          margin-top: 15px;
+        }
+        .links {
+          margin-top: 40px;
+        }
+        .links svg {
+          width: 58px;
+        }
+      }
     </style>
     <script>
       superagent

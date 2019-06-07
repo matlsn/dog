@@ -1,0 +1,44 @@
+.content { opacity: 0; transition: opacity 1.2s linear; }
+.content.loaded { opacity: 1; }
+
+body {
+  font-family: monospace;
+  text-align: center;
+  left: 0;
+  margin: auto;
+  margin-top: -100px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  background-color: #090300;
+  color: #01a0e4;
+}
+.links {
+  margin-top: 20px;
+}
+.links svg {
+  width: 30px;
+  color: #01a0e4;
+}
+svg text {
+  display: none;
+}
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+  .info {
+    font-size: 29px;
+  }
+  div#commits svg {
+    transform: scale(1.5);
+    margin-top: 15px;
+  }
+  .links {
+    margin-top: 40px;
+  }
+  .links svg {
+    width: 58px;
+  }
+}

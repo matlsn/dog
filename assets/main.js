@@ -6,6 +6,11 @@ $.get('https://commits.mat.dog/', function (res) {
   prep = $(prep).find('g g').each(function (i, e) {
     $(e).attr('transform', `translate(${14*i}, 0)`)
   }).end().find('rect').each(function (_, e) {
+    const dcount =  +$(e).attr('data-count')
+    const contr = dcount === 0 ? 'No contributions' : dcount === 1 ? '1 contribution' : `${dcount} contributions`
+    const day = new Date($(e).attr('data-date')).toDateString().substr(4)
+    $(e).attr('aria-label', `${contr} on ${day}`)
+    
     var clr = $(e).attr('fill')
     function change (col) { $(e).attr('fill', col) }
     switch (clr) {
@@ -34,14 +39,11 @@ const doTipsy = cont => {
 }
 
 $(document).on('mouseenter', 'rect', e => {
-  const dcount =  +$(e.currentTarget).attr('data-count')
-  const contr = dcount === 0 ? 'No contributions' : dcount === 1 ? '1 contribution' : `${dcount} contributions`
-  const day = new Date($(e.currentTarget).attr('data-date')).toDateString().substr(4)
   let offset = $(e.currentTarget).offset()
   offset.top = offset.top - 409
   offset.left = offset.left - 120
   doTipsy({
-    text: `${contr} on ${day}`,
+    text: $(e.currentTarget).attr('aria-label'),
     coords: offset
   })
 }).on('mouseleave', 'rect', e => {

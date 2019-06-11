@@ -26,3 +26,24 @@ $.get('https://commits.mat.dog/', function (res) {
   $('#commits').html(prep)
   $('.content').addClass('loaded')
 })
+
+const tipsy = '<div class="tipsy" style="left: %l; top: %t;" aria-hidden="true">%s</div>'
+const doTipsy = cont => {
+  $('.tipsy').remove()
+  $('body').append(tipsy.replace('%s', cont.text).replace('%l', cont.coords.left).replace('%t', cont.coords.top));
+}
+
+$(document).on('mouseenter', 'rect', e => {
+  const dcount =  +$(e.currentTarget).attr('data-count')
+  const contr = dcount === 0 ? 'No contributions' : dcount === 1 ? '1 contribution' : `${dcount} contributions`
+  const day = new Date($(e.currentTarget).attr('data-date')).toDateString().substr(4)
+  let offset = $(e.currentTarget).offset()
+  offset.top = offset.top - 409
+  offset.left = offset.left - 120
+  doTipsy({
+    text: `${contr} on ${day}`,
+    coords: offset
+  })
+}).on('mouseleave', 'rect', e => {
+  $('.tipsy').remove()
+})

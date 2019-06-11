@@ -42,3 +42,13 @@ and (orientation: portrait) {
     width: 58px;
   }
 }
+
+.tipsy {
+    border-radius: 3px;
+    background: #fff;
+    color: #000;
+    font-weight: bold;
+    width: fit-content;
+    padding: 10px;
+    position: absolute;
+}

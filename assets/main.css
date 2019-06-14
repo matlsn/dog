@@ -50,5 +50,8 @@ and (orientation: portrait) {
     font-weight: bold;
     width: fit-content;
     padding: 10px;
-    position: absolute;
+    position: inherit;
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center;
 }

@@ -55,3 +55,16 @@ and (orientation: portrait) {
     margin-top: 20px;
     text-align: center;
 }
+
+.commitscrape-0 {
+  fill: #69c7f1;
+}
+.commitscrape-1 {
+  fill: #1d82af;
+}
+.commitscrape-2 {
+  fill: #2699cc;
+}
+.commitscrape-3 {
+  fill: #115371;
+}

@@ -21,24 +21,6 @@ body {
   width: 30px;
   color: #01a0e4;
 }
-@media only screen 
-and (min-device-width: 320px) 
-and (max-device-width: 480px)
-and (-webkit-min-device-pixel-ratio: 2)
-and (orientation: portrait) {
-  .commitscrape {
-    zoom: 2;
-  }
-  .info {
-    font-size: 29px;
-  }
-  .links {
-    margin-top: 40px;
-  }
-  .links svg {
-    width: 58px;
-  }
-}
 
 .tipsy {
   border-radius: 3px;

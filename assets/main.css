@@ -20,9 +20,6 @@ body {
   width: 30px;
   color: #01a0e4;
 }
-svg text {
-  display: none;
-}
 @media only screen 
 and (min-device-width: 320px) 
 and (max-device-width: 480px)
@@ -47,7 +44,7 @@ and (orientation: portrait) {
     background: #fff;
     color: #000;
     font-weight: bold;
-    width: fit-content;
+    width: min-content;
     padding: 10px;
     position: inherit;
     display: inline-block;

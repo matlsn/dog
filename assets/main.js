@@ -1,9 +1,11 @@
-$.get('https://commits.mat.dog/?columns=23', function (res) {
-  if (!res || res.length < 10) return
-  let prep = res
-  $('#commits').html(prep)
-  $('.content').addClass('loaded')
-})
+fetch('https://commits.mat.dog/?columns=23')
+  .then(response => {
+    return response.text()
+  })
+  .then(res => {
+    document.querySelector('#commits').innerHTML = res
+    document.querySelector('.content').className += " loaded"
+  })
 
 const tipsy = '<div class="tipsy" style="left: %l; top: %t;" aria-hidden="true">%s</div>'
 const doTipsy = cont => {

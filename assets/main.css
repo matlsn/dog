@@ -1,5 +1,6 @@
 .content { opacity: 0; transition: opacity 1.2s linear; }
 .content.loaded { opacity: 1; }
+.tipsy.shown { opacity: 1 }
 
 body {
   font-family: monospace;
@@ -40,16 +41,22 @@ and (orientation: portrait) {
 }
 
 .tipsy {
-    border-radius: 3px;
-    background: #fff;
-    color: #000;
-    font-weight: bold;
-    width: min-content;
-    padding: 10px;
-    position: inherit;
-    display: inline-block;
-    margin-top: 20px;
-    text-align: center;
+  border-radius: 3px;
+  background: #fff;
+  color: #000;
+  font-weight: bold;
+  width: max-content;
+  padding: 10px;
+  opacity: 0;
+  position: inherit;
+  display: inline-block;
+  margin-top: 20px;
+  text-align: center;
+  transition: opacity 0.2s linear;
+}
+
+.content:not(.loaded) .tipsy {
+  display: none;
 }
 
 .commitscrape-0 {

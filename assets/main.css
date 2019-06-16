@@ -28,12 +28,11 @@ and (min-device-width: 320px)
 and (max-device-width: 480px)
 and (-webkit-min-device-pixel-ratio: 2)
 and (orientation: portrait) {
+  .commitscrape {
+    zoom: 2;
+  }
   .info {
     font-size: 29px;
-  }
-  div#commits svg {
-    transform: scale(1.5);
-    margin-top: 15px;
   }
   .links {
     margin-top: 40px;
@@ -68,3 +67,4 @@ and (orientation: portrait) {
 .commitscrape-3 {
   fill: #0b455f;
 }
+.commitscrape { margin: 17px auto; }

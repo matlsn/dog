@@ -1,4 +1,4 @@
-$.get('https://commits.mat.dog/', function (res) {
+$.get('https://commits.mat.dog/?columns=23', function (res) {
   if (!res || res.length < 10) return
   let prep = res
   $('#commits').html(prep)

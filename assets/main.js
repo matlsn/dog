@@ -1,9 +1,9 @@
 fetch('https://commits.mat.dog/?columns=23')
   .then(response => {
-    return response.text()
+    return response.json()
   })
   .then(res => {
-    document.querySelector('#commits').innerHTML = res
+    document.querySelector('#commits').innerHTML = res.html
     document.querySelector('.content').className += " loaded"
     document.querySelectorAll('.commitscrape-block').forEach(e => {
       e.addEventListener('mouseenter', x => {

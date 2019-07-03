@@ -4,7 +4,9 @@ fetch('https://commits.mat.dog/?columns=23')
   })
   .then(res => {
     document.querySelector('#commits').innerHTML = res.html
-    document.querySelector('.content').className += " loaded"
+    setTimeout(() => {
+      document.querySelector('.content').classList.add('loaded')
+    }, 1200)
     document.querySelectorAll('.commitscrape-block').forEach(e => {
       e.addEventListener('mouseenter', x => {
         doTipsy(x.target.getAttribute('aria-label'))

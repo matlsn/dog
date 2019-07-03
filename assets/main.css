@@ -1,5 +1,29 @@
-.content { opacity: 0; transition: opacity 1.2s linear; }
-.content.loaded { opacity: 1; }
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes height {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 91px;
+  }
+}
+
+.content { opacity: 0; animation: 1s ease-in-out opacity forwards; }
+.commits { opacity: 0; height: 0px; animation: 1s ease-out 0s 1 height forwards; }
+.content.loaded .commits { animation: 1s ease-out 0s 1 height forwards, 1s ease-in-out 0s 1 opacity forwards; }
+/*
+#content { opacity: 1 !important; transition: opacity 0.8s ease; }
+.commits { opacity: 0; height: 91px !important; transition: height 0.5s ease; }
+.content.loaded .commits { opacity: 1; transition: all 1.2s ease; height: 91px !important; }
+*/
+
 .tipsy.shown { opacity: 1 }
 
 body {
